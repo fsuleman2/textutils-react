@@ -1,0 +1,196 @@
+React is a JavaScript library for building user interfaces.
+
+React is used to build single-page applications.
+
+React allows us to create reusable UI components.
+
+-Resuable component
+-Write once and use everywhere
+-light weight
+-use libraries whatever you want
+Npm is a tool that use to install packages. 
+
+Npx is a tool that use to execute packages. 
+
+Packages used by npm are installed globally you have to care about pollution for the long term. 
+
+Packages used by npx are not installed globally so you have to carefree for the pollution for the long term.
+
+CMD to install React: npx create-react-app textutils
+
+
+create-react-app includes built tools such as webpack, Babel, and ESLint.
+
+Folder structures
+public/
+src/ all components,props and states will be here
+
+props:component has some details that details are nothing but props
+
+states:heading suleman and some content
+we can change states based on requriement.
+
+index.js is the entry point for the application
+
+Data type:
+numbers
+objects
+booleans
+string
+undefined
+null
+-------------------
+function hello(){
+	console.log("function");
+}
+let hello=()=>console.log("function");
+--------------------
+objects
+let obj={
+r:234,
+m:4,
+myfun:function myfun1(number){
+console.log("hello"+number);
+}
+}
+obj.r
+obj.myfun(14)
+
+===============Events in js=================
+document.addEventListener("click",function click(){
+alert("hello")
+});
+
+let conf = confirm("Are you sure?");
+console.log(conf);
+//if clicked on yes return true if cliked on cancel than false will be printed
+*do checkout string methods and number methods on google
+
+let arr=[34,21,23];
+arr.forEach(element=>{});
+---------------------------------------
+index.html is a entry point and app.js is something our site where we write our actual code means our template you could say.
+
+->react uses two components 
+1)class base component
+2)function base component
+mostly 2nd is used bcoz syntx it kinds easy.
+
+JSX(JAVASCRIPT XML):
+js+html
+html class in jsx className
+html for in jsx htmlFor
+html tabindex in jsx tabIndex
+
+->In react we can written only one element
+function App(){
+return(
+<div className="App"></div>
+);
+}
+**Wrong Syntax
+function App(){
+return(
+<h1>Contact Page</h1>
+<div className="App"></div>
+);
+}
+Note:Just in case you want to add h1 tag we use JSX Fragment tag
+function App(){
+return(
+<>
+<h1>Contact Page</h1>
+<div className="App"></div>
+</>
+);
+}<!--Now It is valid-->
+
+let name ="suleman"
+<>
+<h1>Hello, {name}</h1>
+</>
+
+Note: Babel complile JSX down to React.createElement() calls.
+
+IN SPA data is saved, in non spa everytime client sends a request html+css+js will be fetched and loaded.
+in spa only one time html+css+js is loaded and compiled on client browser and data on page changes as per the request.
+On demand, a single-page app reloads only the data necessary for the user. In the case of a multi-page app, the entire web page content is refreshed
+
+When the user launches some SPA, the server loads the entire page. Later on, responding to the request, only the necessary data is transferred in the form of JSON files.
+
+any tag which is not getting close you have to put / add the end
+<input/> <hr/>
+
+also change href="#" to href="/"
+
+
+*Creating custom component*
+It better to keep custom components in folder of ur choice
+Components inside src
+Navbar.js //name of the comp alwys starts with caps 
+inside that file 
+type 'rfc' short cut for function base component.
+
+later on you can load that component in any other component simply by adding <Navbar/>
+
+*props*
+-> props stands for properties.
+-> Props are arguments passed into React components.
+-> Props are passed to components via HTML attributes.
+-> React Props are like function arguments in JavaScript and attributes in HTML.
+
+To send props into a component, use the same syntax as HTML attributes:
+
+<Navbar title="TextUtils">
+
+function Navbar(props){
+	return(
+	<>
+	<h1>{props.title}</h1>
+</>
+
+)
+}
+
+Props also helpful in passing data from one component to the another.
+
+Typechecking With PropTypes:
+
+As your app grows, you can catch a lot of bugs with typechecking. For some applications, you can use JavaScript extensions like Flow or TypeScript to typecheck your whole application. But even if you don’t use those, React has some built-in typechecking abilities. 
+
+To run typechecking on the props for a component, you can assign the special propTypes property:
+Function Components:
+If you are using function components in your regular development, you may want to make some small changes to allow PropTypes to be properly applied.
+
+Let’s say you have a component like this:
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+export default HelloWorldComponent
+
+step:1 import PropTypes from 'prop-types'
+step:2 
+
+import PropTypes from 'prop-types'
+
+function HelloWorldComponent({ name }) {
+  return (
+    <div>Hello, {name}</div>
+  )
+}
+
+HelloWorldComponent.propTypes = {
+  name: PropTypes.string.isRequired
+}
+
+export default HelloWorldComponent
+-----------------------------------------
+Default Prop:
+he defaultProps will be used to ensure that this.props.name will have a value if it was not specified by the parent component. The propTypes typechecking happens after defaultProps are resolved, so typechecking will also apply to the defaultProps.
+
+Navbar.defaultProps={
+    title:'Set Title here'
+};
