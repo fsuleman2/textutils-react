@@ -194,3 +194,6 @@ he defaultProps will be used to ensure that this.props.name will have a value if
 Navbar.defaultProps={
     title:'Set Title here'
 };
+
+----------------------------------------------------------
+States: State generally refers to application data or properties that need to be tracked.
