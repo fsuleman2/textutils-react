@@ -15,6 +15,9 @@ export default function TextForm(props) {
     //console.log("Onchange");
     setText(event.target.value);
   };
+  const handleClear=()=>{
+    setText("");
+  }
   //text="updating text" not allowed in react
   //setText("Enter your text here"); allowed
   const [text, setText] = useState("Enter text here");
@@ -36,6 +39,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-2" onClick={handleLowClick}>
           Convert Lowercase
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleClear}>
+          Clear
         </button>
       </div>
       <div className="container my-3">
