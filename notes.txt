@@ -231,3 +231,7 @@ Usage:The useState Hook can be used to keep track of strings, numbers, booleans,
 
 *for more info on hooks and state kindly refer this link!
 https://www.w3schools.com/react/react_usestate.asp
+
+{`template literal`}
+{}//for writing js
+{{}} //for object
