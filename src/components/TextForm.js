@@ -18,6 +18,17 @@ export default function TextForm(props) {
   const handleClear=()=>{
     setText("");
   }
+  // code for copying text
+  const handleCopy=()=>{
+    let text = document.getElementById("myBox");
+     text.select();
+     navigator.clipboard.writeText(text.value);
+  }
+  //code for handling extra spaces
+  const handleExtraSpaces = ()=>{
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  }
   //text="updating text" not allowed in react
   //setText("Enter your text here"); allowed
   const [text, setText] = useState("Enter text here");
@@ -42,6 +53,12 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-2" onClick={handleClear}>
           Clear
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleCopy}>
+         Copy Text
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>
+        ExtraSpaces
         </button>
       </div>
       <div className="container my-3">
