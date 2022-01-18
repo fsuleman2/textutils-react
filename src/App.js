@@ -16,6 +16,10 @@ function App() {
       setModeText("Disable");
       document.body.style.backgroundColor = "#322F3D";
       showAlert("Dark mode has been enabled!!","success")
+      //document.title='TextUtils Dark Mode '
+      // setInterval(()=>{
+      //   document.title='Textutils is amazing'
+      // },2000);
     } else {
       setMode("light");
       setModeText("Enable");
