@@ -5,11 +5,13 @@ export default function TextForm(props) {
     // console.log("UpperCase was Clicked"+text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Capital Letters!!","success");
   };
   const handleLowClick = () => {
     // console.log("UpperCase was Clicked"+text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Small Letters!!","success");
   };
   const handleOnChange = (event) => {
     //console.log("Onchange");
@@ -17,17 +19,20 @@ export default function TextForm(props) {
   };
   const handleClear=()=>{
     setText("");
+    props.showAlert("Text Cleared Successfully!!","success");
   }
   // code for copying text
   const handleCopy=()=>{
     let text = document.getElementById("myBox");
      text.select();
      navigator.clipboard.writeText(text.value);
+     props.showAlert("Copied to Clipboard!!","success");
   }
   //code for handling extra spaces
   const handleExtraSpaces = ()=>{
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra spacaces!!","success");
   }
   //text="updating text" not allowed in react
   //setText("Enter your text here"); allowed
