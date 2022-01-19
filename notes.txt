@@ -235,3 +235,25 @@ https://www.w3schools.com/react/react_usestate.asp
 {`template literal`}
 {}//for writing js
 {{}} //for object
+
+---------------------------------
+React Router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+ye below link pe padhlo aur dhekna hai toh.
+https://v5.reactrouter.com/web/guides/quick-start
+$npm install react-router-dom
+->use switch and add endpoints then go to navbar
+->change <a href=""> to <link to=""> //dont forget to import link
+Note: parent endpoint should be at the end if u r using switch in react router
+
+it is always good idea to use 
+<Route exact path="/about"></Route>
+because react always do partial endpoint matching
+to make it full use 'exact'.
+/users - >comp1
+/users/home/comp2

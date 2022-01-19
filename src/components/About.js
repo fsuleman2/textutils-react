@@ -1,38 +1,39 @@
 import React from "react";
 import { useState } from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
+export default function About(props) {
+  // ***Below code is commented to apply global darkmode
+  // const [myStyle, setMyStyle] = useState({
+  //   color: "black",
+  //   backgroundColor: "white",
+  // });
 
-  //creating one more state to change button text on switching modes
-  const [btnText, setBtnText] = useState("Enable Dark Mode");
+  // //creating one more state to change button text on switching modes
+  // const [btnText, setBtnText] = useState("Enable Dark Mode");
 
-  // toogle code to turn dark
-  const toggleStyle = () => {
-    if (myStyle.color === "black") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-        // for border around accordian in dark mode
-        border: "1px solid white",
-      });
-      setBtnText("Light Mode");
-    } else {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
+  // // toogle code to turn dark
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "black") {
+  //     setMyStyle({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //       // for border around accordian in dark mode
+  //       border: "1px solid white",
+  //     });
+  //     setBtnText("Light Mode");
+  //   } else {
+  //     setMyStyle({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //     });
 
-      setBtnText("Dark Mode");
-    }
-  };
+  //     setBtnText("Dark Mode");
+  //   }
+  // };
   return (
     <>
       {/* SWITCH FOR CONTROLLING MODES(DARK/LIGHT) */}
-      <div className="form-check form-switch position-absolute top-10 end-0">
+      {/* <div className="form-check form-switch position-absolute top-10 end-0">
         <input
           onClick={toggleStyle}
           className="form-check-input "
@@ -43,8 +44,12 @@ export default function About() {
         <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
           {btnText}
         </label>
-      </div>
-      <div className="container" style={myStyle}>
+      </div> */}
+
+
+
+
+      <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
         <h1 className="my-3">About Us</h1>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
@@ -56,7 +61,7 @@ export default function About() {
                 data-bs-target="#collapseOne"
                 aria-expanded="true"
                 aria-controls="collapseOne"
-                style={myStyle}
+                style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}
               >
                 Accordion Item #1
               </button>
@@ -67,7 +72,7 @@ export default function About() {
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={myStyle}>
+              <div className="accordion-body" style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}>
                 <strong>This is the first item's accordion body.</strong> It is
                 shown by default, until the collapse plugin adds the appropriate
                 classNamees that we use to style each element. These classNamees
@@ -89,7 +94,7 @@ export default function About() {
                 data-bs-target="#collapseTwo"
                 aria-expanded="false"
                 aria-controls="collapseTwo"
-                style={myStyle}
+                style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}
               >
                 Accordion Item #2
               </button>
@@ -100,7 +105,7 @@ export default function About() {
               aria-labelledby="headingTwo"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={myStyle}>
+              <div className="accordion-body" style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}>
                 <strong>This is the second item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classNamees that we use to style each element. These
@@ -122,7 +127,7 @@ export default function About() {
                 data-bs-target="#collapseThree"
                 aria-expanded="false"
                 aria-controls="collapseThree"
-                style={myStyle}
+                style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}
               >
                 Accordion Item #3
               </button>
@@ -133,7 +138,7 @@ export default function About() {
               aria-labelledby="headingThree"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={myStyle}>
+              <div className="accordion-body" style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}>
                 <strong>This is the third item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classNamees that we use to style each element. These
