@@ -23,9 +23,9 @@ export default function TextForm(props) {
   }
   // code for copying text
   const handleCopy=()=>{
-    let text = document.getElementById("myBox");
-     text.select();
-     navigator.clipboard.writeText(text.value);
+    // let text = document.getElementById("myBox");
+    //  text.select();
+     navigator.clipboard.writeText(text);
      props.showAlert("Copied to Clipboard!!","success");
   }
   //code for handling extra spaces
