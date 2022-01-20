@@ -40,7 +40,7 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
-        <h1>{props.heading}</h1>
+        <h2>{props.heading}</h2>
         <div className="mb-3 my-3">
           <textarea
             className="form-control"
@@ -51,19 +51,19 @@ export default function TextForm(props) {
             style={{backgroundColor:props.mode==='dark'?'#1b1b32':'white',color:props.mode==='dark'?'white':'black'}}
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>
           Convert Uppercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleLowClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>
           Convert Lowercase
         </button>
-        <button className="btn btn-primary my-2 mx-2" onClick={handleClear}>
+        <button disabled={text.length===0} className="btn btn-primary my-1 mx-2" onClick={handleClear}>
           Clear
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCopy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopy}>
          Copy Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpaces}>
         ExtraSpaces
         </button>
       </div>
@@ -75,7 +75,7 @@ export default function TextForm(props) {
         </p>
         <p>{0.008 * text.split(" ").filter((e)=>{return e.length!==0}).length} Minutes to read</p>
         <h2>Preview</h2>
-        <p>{text.length>0?text:'Enter something in the above textbox to preview it here..'}</p>
+        <p>{text.length>0?text:'Nothing to preview'}</p>
       </div>
     </>
   );

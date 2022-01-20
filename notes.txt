@@ -257,3 +257,5 @@ because react always do partial endpoint matching
 to make it full use 'exact'.
 /users - >comp1
 /users/home/comp2
+==========================
+npm run build for deployment.

@@ -57,7 +57,7 @@ function App() {
             <TextForm
               showAlert={showAlert}
               mode={mode}
-              heading="Enter the text to analyze"
+              heading="Try - TextUtils - Word Counter, Character Counter, Remove Extra Spaces"
             />
           </div>
         </Route>
